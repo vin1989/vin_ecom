@@ -1,0 +1,19 @@
+<html>
+<head>
+
+<link rel="stylesheet" href="/static/css/bootstrap.min.css">
+</head>
+<body>
+
+       <div style="margin-left:35%;width:400px">
+		<h2>Register</h2>
+		<form action="{% url 'login_app:signup' %}" method='post'> {% csrf_token %}
+		
+		{{form.as_p}}
+		
+		<input type='submit' class="btn btn-primary btn-md" value='Register' />
+		</form>
+     </div>
+ 
+</body>
+</html>

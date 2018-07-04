@@ -1,0 +1,29 @@
+
+<html>
+<head>
+
+ </head>
+<body> 
+		
+	
+	 <p>click <a href="/">here</a> to home.</p>
+	 
+	 Title:{{n.title}}<br>
+	 Content:{{n.content|linebreaks}}<br><br>
+	 <button onclick="window.location='{% url 'edit' n.id %}'">Edit Record</button>
+	 <button onclick="window.location='{% url 'delete' n.id %}'">Delete Record</button>
+	<br><br>
+	<h3>Similar Post</h3>
+	
+	{% for i in al %}
+	
+	<a href="{% url 'detail' i.id i.slug %}"><b>{{i.title}}</b></a><br><br>
+	{% endfor %}
+	
+	 <br>
+	 <h3>Recent Post</h3>
+	{% for i in oth %}
+	<a href="{% url 'detail' i.id i.slug %}"><b>{{i.title}}</b></a><br><br>
+	{% endfor %}
+</body>
+</html>	 
